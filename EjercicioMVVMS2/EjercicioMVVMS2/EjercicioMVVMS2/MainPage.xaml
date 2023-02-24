@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EjercicioMVVMS2.NewFolder"
+             x:Class="EjercicioMVVMS2.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:VMExpresion></local:VMExpresion>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Bienvenido a mi calculadora" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Image Source="https://educacion30.b-cdn.net/wp-content/uploads/2016/12/oneplusplus-calculator-logo.png" />
+
+        <Label Text="Ingresa un numero:" FontSize="20" Margin="20" />
+        <Entry Placeholder="Numero 1" Keyboard="Numeric"  Text="{Binding Numero1}" />
+
+        <Label Text="Ingresa otro numero:" FontSize="20" Margin="20" />
+        <Entry Placeholder="Numero 1" Keyboard="Numeric" Text="{Binding Numero2}" />
+
+        <Label Text="{Binding Resultado}" TextColor="Brown" FontSize="20"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Command="{Binding Sumar}" Text="Sumar" Grid.Row="1"/>
+            <Button Command="{Binding Restar}" Text="Restar" Grid.Row="1" Grid.Column="1" />
+            <Button Command="{Binding Multiplicar}" Text="Multiplicar"  Grid.Row="2"/>
+            <Button Command="{Binding Dividir}" Text="Dividir" Grid.Row="2" Grid.Column="1"/>
+        </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>
